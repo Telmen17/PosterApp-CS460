@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PosterApp-CS460</string>
+    <string name="poster">poster</string>
+    <string name="menu_icon">Menu Icon</string>
+    <string name="search_icon">Search Icon</string>
+    <string name="add_to_watchlist_text">Add to Watchlist</string>
+</resources>
