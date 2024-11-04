@@ -4,4 +4,6 @@
     <string name="menu_icon">Menu Icon</string>
     <string name="search_icon">Search Icon</string>
     <string name="add_to_watchlist_text">Add to Watchlist</string>
+    <string name="telmen">Telmen</string>
+    <string name="telmen_watchlist">Telmen WatchList</string>
 </resources>
