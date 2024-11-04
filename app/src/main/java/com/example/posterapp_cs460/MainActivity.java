@@ -43,10 +43,11 @@ public class MainActivity extends AppCompatActivity implements PostersListener {
             return insets;
         });
 
+        //Connecting UI elements to the fields
         RecyclerView postersRecyclerView = findViewById(R.id.postersRecyclerView);
         buttonAddToWatchList = findViewById(R.id.buttonAddToWatchlist);
 
-        //Prepare data
+        //Preparing movie data for the poster elements
 
         List<Poster> posterList = new ArrayList<>();
 
@@ -148,15 +149,23 @@ public class MainActivity extends AppCompatActivity implements PostersListener {
         posterList.add(poster10);
 
 
-
+        //Declaring the poster adapter
         final PosterAdapter posterAdapter = new PosterAdapter(posterList, this);
         postersRecyclerView.setAdapter(posterAdapter);
 
+        //Adding an click action listener method to control interaction
         buttonAddToWatchList.setOnClickListener(new View.OnClickListener() {
+            /**
+             * An overridden click action listener method that reacts when the watchlist button is
+             * clicked. It gets all the selected posters, and displays a toast that confirms
+             * the movies were added to the watchlist.
+             * @param view View object on the app screen.
+             */
             @Override
             public void onClick(View view) {
                 List<Poster> selectPosters = posterAdapter.getSelectedPosters();
 
+                //Creating a new StringBuilder to connect strings
                 StringBuilder posterNames = new StringBuilder();
                 for (int i = 0; i < selectPosters.size(); i++) {
                     if (i == 0) {
@@ -165,11 +174,17 @@ public class MainActivity extends AppCompatActivity implements PostersListener {
                         posterNames.append("\n").append(selectPosters.get(i).name);
                     }
                 }
+                //Displaying the toast on the GUI screen
                 Toast.makeText(MainActivity.this, posterNames.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+    /**
+     * An overridden method that controls the visibility of the watchlist button.
+     * If a poster is selected, the button appears. Else, the button disappears.
+     * @param isSelected A boolean value that determines whether or not the poster is selected.
+     */
     @Override
     public void onPosterAction(Boolean isSelected) {
         if (isSelected) {
