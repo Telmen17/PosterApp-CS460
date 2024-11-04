@@ -1,3 +1,8 @@
+/**
+ * The java class that controls the main processes of the movie poster application.
+ * The view is declared and created as well as the app is populated with data.
+ * @author Telmen Enkhtuvshin
+ */
 package com.example.posterapp_cs460;
 
 import android.os.Bundle;
@@ -17,7 +22,16 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements PostersListener {
 
+    /**
+     * Button field to be used for reference
+     */
     private Button buttonAddToWatchList;
+
+    /**
+     * An action listener method that creates the application view elements, connects the UI
+     * elements to the class fields, and populates the app with movie data.
+     * @param savedInstanceState Saved instance state of the application view.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
